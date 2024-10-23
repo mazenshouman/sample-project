@@ -3,13 +3,13 @@ pipeline {
 stages {
         stage('Clone Repository') {
             steps {
-                git 'https://github.com/username/sample-project.git'
+                git 'https://github.com/mazenshouman/sample-project.git'
             }
         }
         stage('Build Docker Image') {
             steps {
                 script {
-                    dockerImage = docker.build("username/sample-app:latest")
+                    dockerImage = docker.build("mazenshouman/sample-app:latest")
                 }
             }
         }
