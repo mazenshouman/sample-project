@@ -17,7 +17,7 @@ stages {
             steps {
                 script {
                     sh """
-                    docker run --name math_flask --rm mazenshouman/sample-app:latest
+                    docker run --name math_flask -p 5000:5000 --rm mazenshouman/sample-app:latest
                     """
                 }
             }
