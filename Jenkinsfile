@@ -30,7 +30,7 @@ stages {
             steps {
                 script {
                     sh """
-                    docker run --name math_flask --rm mazenshouman/sample-app:latest pytest ./app/test_app.py
+                    docker run --name math_flask --rm mazenshouman/sample-app:latest pytest test_app.py
                     """
                 }
             }
