@@ -10,18 +10,18 @@ stages {
             steps {
                 script {
                     // Create and activate virtual environment
-                    bash 'python3 -m venv venv'
-                    bash 'source venv/bin/activate'
+                    sh 'python3 -m venv venv'
+                    // sh 'source venv/bin/activate'
                     // Install pytest and other dependencies
-                    bash 'venv/bin/pip install -r requirements.txt'
+                    sh 'venv/bin/pip install -r requirements.txt'
                 }
             }
         }
         stage('Build Docker Image') {
             steps {
                 script {
-                    bash "pwd"
-                    bash "ls"
+                    sh "pwd"
+                    sh "ls"
                     dockerImage = docker.build("mazenshouman/sample-app:latest")
                 }
             }
@@ -30,7 +30,7 @@ stages {
             steps {
                 script {
                     // Activate the virtual environment and run pytest
-                    bash 'source venv/bin/activate && venv/bin/pytest app.py'
+                    sh 'source venv/bin/activate && venv/bin/pytest app.py'
                 }
             }
         }
