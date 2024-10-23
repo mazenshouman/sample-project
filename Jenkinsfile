@@ -10,6 +10,7 @@ stages {
             steps {
                 script {
                     sh "pwd"
+                    sh "ls"
                     dockerImage = docker.build("mazenshouman/sample-app:latest")
                 }
             }
