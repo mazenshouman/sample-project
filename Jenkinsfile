@@ -15,12 +15,10 @@ stages {
                 }
             }
         }
-        stage('Push Docker Image') {
+        stage('Run Test') {
             steps {
                 script {
-                    docker.withRegistry('https://index.docker.io/v1/', 'dockerhub-credentials') {
-                        dockerImage.push()
-                    }
+                    sh "pytest app.py"
                 }
             }
         }
