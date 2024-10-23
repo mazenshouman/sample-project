@@ -30,7 +30,7 @@ stages {
             steps {
                 script {
                     // Activate the virtual environment and run pytest
-                    sh 'source venv/bin/activate && venv/bin/pytest app.py'
+                    sh 'venv/bin/pytest app.py'
                 }
             }
         }
