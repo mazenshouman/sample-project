@@ -9,6 +9,7 @@ stages {
         stage('Build Docker Image') {
             steps {
                 script {
+                    sh "ls"
                     dockerImage = docker.build("mazenshouman/sample-app:latest")
                 }
             }
