@@ -10,7 +10,7 @@ stages {
             steps {
                 script {
                     // Install Python and virtualenv if needed
-                    sh 'sudo apt-get install -y python3 python3-venv python3-pip'
+                    sh 'apt-get install -y python3 python3-venv python3-pip'
                     // Create and activate virtual environment
                     sh 'python3 -m venv venv'
                     sh 'source venv/bin/activate'
