@@ -13,7 +13,7 @@ stages {
                     sh 'python3 -m venv venv'
                     // sh 'source venv/bin/activate'
                     // Install pytest and other dependencies
-                    sh 'venv/bin/pip install -r requirements.txt'
+                    sh 'venv/bin/pip install pytest'
                 }
             }
         }
