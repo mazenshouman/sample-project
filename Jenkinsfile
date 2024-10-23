@@ -6,17 +6,6 @@ stages {
                 git 'https://github.com/mazenshouman/sample-project.git'
             }
         }
-         stage('Set Up Python Environment') {
-            steps {
-                script {
-                    // Create and activate virtual environment
-                    sh 'python3 -m venv venv'
-                    // sh 'source venv/bin/activate'
-                    // Install pytest and other dependencies
-                    sh 'venv/bin/pip install pytest'
-                }
-            }
-        }
         stage('Build Docker Image') {
             steps {
                 script {
