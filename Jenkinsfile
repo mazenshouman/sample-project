@@ -29,8 +29,9 @@ stages {
         stage('Run Test') {
             steps {
                 script {
-                    // Activate the virtual environment and run pytest
-                    sh 'venv/bin/pytest test_app.py'
+                    sh """
+                    docker run --name math_flask --rm mazenshouman/sample-app:latest pytest ./app/test_app.py
+                    """
                 }
             }
         }
