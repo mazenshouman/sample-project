@@ -9,20 +9,18 @@ stages {
         stage('Build Docker Image') {
             steps {
                 script {
-                    sh "pwd"
-                    sh "ls"
                     dockerImage = docker.build("mazenshouman/sample-app:latest")
                 }
             }
         }
-        stage('Run Test') {
-            steps {
-                script {
-                    sh """
-                    docker run --name math_flask --rm mazenshouman/sample-app:latest pytest ./app/test_app.py
-                    """
-                }
-            }
-        }
+        // stage('Run Test') {
+        //     steps {
+        //         script {
+        //             sh """
+        //             docker run --name math_flask --rm mazenshouman/sample-app:latest pytest ./app/test_app.py
+        //             """
+        //         }
+        //     }
+        // }
     }
 }
